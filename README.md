@@ -43,3 +43,30 @@ OddOne comes packaged with 20 production-ready, interactive widgets completely i
 - **Architecture:** Chrome Extension Manifest V3
 - **Styling:** Tailwind CSS (Glassmorphic Utilities)
 - **Layout Engine:** `react-grid-layout`
+
+
+## 📦 Installation & Setup
+
+Since the production-ready compiled bundle is included directly in the repository, you can load the extension into Google Chrome immediately.
+
+### 1. Clone the Repository
+
+Open your terminal or command prompt and clone the repository to your local machine:
+
+```bash
+git clone [https://github.com/ShaharearSabbir/OddOne.git](https://github.com/ShaharearSabbir/OddOne.git)
+
+```
+
+*(Alternatively, you can click the green **Code** button at the top of this page and select **Download ZIP**, then extract it on your computer).*
+
+---
+
+### 2. Load the Extension into Google Chrome
+
+1. Open Google Chrome and navigate to the Extensions management page by typing **`chrome://extensions/`** into your URL bar and hitting Enter.
+2. In the top-right corner of the page, toggle the **Developer mode** switch to **ON**.
+3. Click the **Load unpacked** button that appears in the top-left toolbar.
+4. In the file explorer window, select to your cloned/extracted `OddOne` folder
+
+**🎉 Success!** The **OddOne Custom New Tab Dashboard** is now active in your browser. Open a blank new tab to check out your brand new workspace workspace canvas.
