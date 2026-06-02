@@ -1,4 +1,3 @@
-
 ## OddOne | Premium Custom New Tab Dashboard
 
 **OddOne** is a feature-rich, high-performance Chrome Extension built with React 19, TypeScript, and Vite. It completely reimagines your browser's default New Tab page into a fully customizable, production-grade productivity dashboard using an intuitive drag-and-drop grid canvas.
@@ -44,7 +43,6 @@ OddOne comes packaged with 20 production-ready, interactive widgets completely i
 - **Styling:** Tailwind CSS (Glassmorphic Utilities)
 - **Layout Engine:** `react-grid-layout`
 
-
 ## 📦 Installation & Setup
 
 Since the production-ready compiled bundle is included directly in the repository, you can load the extension into Google Chrome immediately.
@@ -54,11 +52,11 @@ Since the production-ready compiled bundle is included directly in the repositor
 Open your terminal or command prompt and clone the repository to your local machine:
 
 ```bash
-git clone [https://github.com/ShaharearSabbir/OddOne.git](https://github.com/ShaharearSabbir/OddOne.git)
+git clone git clone https://github.com/ShaharearSabbir/OddOne.git
 
 ```
 
-*(Alternatively, you can click the green **Code** button at the top of this page and select **Download ZIP**, then extract it on your computer).*
+_(Alternatively, you can click the green **Code** button at the top of this page and select **Download ZIP**, then extract it on your computer)._
 
 ---
 
