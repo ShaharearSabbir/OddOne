@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom JS Sandbox</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 12px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #f8fafc;
+      background: transparent;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="app-root"></div>
+
+  <script>
+    // Listen for messages from the extension parent
+    window.addEventListener('message', (event) => {
+      // Ensure we have a payload of code to execute
+      if (event.data && event.data.type === 'RENDER') {
+        const { html, css, js } = event.data.payload || {};
+
+        // 1. Reset standard container
+        const container = document.getElementById('app-root');
+        container.innerHTML = html || '';
+
+        // 2. Remove any previously injected sandboxed scripts or styles
+        const oldStyles = document.querySelectorAll('.sandboxed-style');
+        oldStyles.forEach(el => el.remove());
+        const oldScripts = document.querySelectorAll('.sandboxed-script');
+        oldScripts.forEach(el => el.remove());
+
+        // 3. Inject new custom CSS
+        if (css) {
+          const styleTag = document.createElement('style');
+          styleTag.className = 'sandboxed-style';
+          styleTag.textContent = css;
+          document.head.appendChild(styleTag);
+        }
+
+        // 4. Inject new custom JS
+        if (js) {
+          const scriptTag = document.createElement('script');
+          scriptTag.className = 'sandboxed-script';
+          scriptTag.textContent = `
+            (function() {
+              try {
+                ${js}
+              } catch (err) {
+                console.error("Error running sandboxed JS:", err);
+                const errDiv = document.createElement('div');
+                errDiv.style.color = '#ef4444';
+                errDiv.style.marginTop = '10px';
+                errDiv.style.fontSize = '12px';
+                errDiv.textContent = 'Runtime Error: ' + err.message;
+                document.getElementById('app-root').appendChild(errDiv);
+              }
+            })();
+          `;
+          document.body.appendChild(scriptTag);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

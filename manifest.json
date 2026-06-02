@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "OddOne",
+  "version": "1.0.0",
+  "description": "A beautiful, premium, and fully customizable drag-and-drop dashboard for your new tab page.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzFLQgwE7RSOcTDynEcFHdle/AoktWTzS33ND24YoIrwuxc8sMOkQd9TAsSDFuvIIWZhPA8JwFUMDzsl2H2/6FphLKhZfWWKmR9Se4+a+8pjSC+kttxWbe71f/9zkKg18oiWoA8PWMkjjuUCMUkBqDRMLFkkfe8XCrrmUXLs1PJiHUrF4rsgxJvA9MPwXoP1kpm9rlLhhKdLsRCiQ56m0QK5dD9O6R7WZJ2Ma4wcM4XdpdXM+QoQzO8cEaB3SNdKEvq9HpgIn7JhcSadM6phMAgQgikWFJnynmDvDBuF9s0+Gd//MgpDiT+9FJHcRC1wSxKhbu07udo/lh5gU8yr0MwIDAQAB",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": ["topSites", "storage", "identity", "geolocation"],
+  "host_permissions": [
+    "https://api.open-meteo.com/*",
+    "https://nominatim.openstreetmap.org/*",
+    "https://ip-api.com/*",
+    "https://ipapi.co/*"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "sandbox": {
+    "pages": ["sandbox.html"]
+  },
+  "action": {
+    "default_title": "Custom Dashboard",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src *;"
+  }
+}
